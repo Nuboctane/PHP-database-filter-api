@@ -1,11 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "s_filter";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+      include_once 'config/database.php';
+      $db = new Database();
+      $conn = $db->getConnection();
 $my_str = strtolower($_POST["word"]);
 
 

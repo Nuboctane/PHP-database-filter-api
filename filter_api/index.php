@@ -106,11 +106,11 @@
 	if( isset($_POST['characters']) ) {
 	$val = $_POST['word'];
 	}
-	$servername = "localhost";
-	$dbname     = "s_filter";
-	$username   = "root";
-	$password   = "";
-	$conn = new mysqli($servername, $username, $password, $dbname);
+
+    include_once 'config/database.php';
+    $db = new Database();
+    $conn = $db->getConnection();
+
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}

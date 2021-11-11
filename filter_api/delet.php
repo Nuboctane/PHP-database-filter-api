@@ -1,11 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "s_filter";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+    include_once 'config/database.php';
+    $db = new Database();
+    $conn = $db->getConnection();
 //$sql = "DELETE FROM books WHERE isbn13 = '$_POST[isbn13]'";
 $sql = "DELETE FROM words WHERE id = '$_POST[id]'";
 
